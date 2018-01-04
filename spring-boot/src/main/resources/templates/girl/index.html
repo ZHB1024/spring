@@ -1,0 +1,39 @@
+<!DOCTYPE html>  
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"  
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">  
+    <head>  
+        <title>Hello World!</title>  
+        <head th:include="common/header" />
+    </head>
+    
+    <body>
+    <div align="center">
+        <table>
+             <tr>
+                  <th>id</th>
+                  <th>age</th>
+                  <th>cupSize</th>
+                  <th>money</th>
+             </tr>
+             <tr th:each="girl : ${girls}">
+                  <td th:text="${girl.id}"></td>
+                  <td th:text="${girl.age}"></td>
+                  <td th:text="${girl.cupSize}"></td>
+                  <td th:text="${girl.money}"></td>
+             </tr>
+        </table>
+   </div>
+   
+   <div>
+    <div><a th:href="@{http://blog.csdn.net/u012706811}">绝对路径</a></div>
+    <div><a th:href="@{images/解锁申请表.jpg}">Content路径,访问static下的images文件夹</a></div>
+    <div><a href="http://localhost:8080/testController/download?id=123" target="_blank">
+      nihao
+    </a></div>
+   </div>
+  </body>
+  
+<div>
+ <head th:include="common/foot" />
+</div>
+</html>  

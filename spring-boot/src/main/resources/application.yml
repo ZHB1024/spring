@@ -1,0 +1,22 @@
+spring:
+  profiles:
+    active: dev
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/springMVC?useUnicode=true&amp;characterEncoding=UTF-8
+    username: root
+    password: 123456
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  
+  thymeleaf:
+    cache: false
+    #prefix: /templates/
+    suffix: .html
+
+server:
+  tomcat:
+    access_log_enabled: true
+    basedir: target/tomcat
